@@ -1,0 +1,21 @@
+<h1><%= @car.name  %></h1>
+
+<p><%= @car.city  %></p>
+
+<p><%= @car.date  %></p>
+	
+<ul>
+  <li><%= link_to "Edit", edit_car_path(@car) %></li>
+
+  <li><%= link_to "Delete car", car_path(@car),
+                  method: :delete,
+                  data: { confirm: "Are you sure You want to delete This car ?" } %></li>  
+
+  <li><%= link_to "Back", cars_path %></li>
+</ul>
+
+<h2>Comments</h2>
+<%= render @car.comments %>
+
+<h2>Add a Comments:</h2>
+<%= render 'comments/form' %>

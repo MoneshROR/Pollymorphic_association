@@ -1,0 +1,14 @@
+<h1>Car List</h1>
+<ul>
+	<% @cars.each do |t| %>
+		<li>
+		  <%= link_to t.name ,t %>
+		</li>
+	<% end %>
+</ul>
+
+<%= link_to "Add New Car",new_car_path %>
+<br>
+<br>
+
+<%= link_to "Add New Bikes",new_bike_path %>

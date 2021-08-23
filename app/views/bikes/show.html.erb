@@ -1,0 +1,21 @@
+<h1><%= @bike.name  %></h1>
+
+<p><%= @bike.city  %></p>
+
+<p><%= @bike.date  %></p>
+	
+<ul>
+  <li><%= link_to "Edit", edit_bike_path(@bike) %></li>
+
+  <li><%= link_to "Delete bike", bike_path(@bike),
+                  method: :delete,
+                  data: { confirm: "Are you sure You want to delete This bike ?" } %></li>  
+
+  <li><%= link_to "Back", bikes_path %></li>
+</ul>
+
+<h2>Comments</h2>
+<%= render @bike.comments %>
+
+<h2>Add a Comments:</h2>
+<%= render 'comments/form1' %>
