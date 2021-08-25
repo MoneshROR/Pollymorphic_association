@@ -1,0 +1,12 @@
+<%= form_with model: [ @auto, @auto.comments.build ] do |form| %>
+  <p>
+    <%= form.label :body %><br>
+    <%= form.text_field :body %>
+  </p>
+
+  </p>
+  
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

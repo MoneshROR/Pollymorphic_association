@@ -1,0 +1,21 @@
+<h1><%= @auto.name  %></h1>
+
+<p><%= @auto.city  %></p>
+
+<p><%= @auto.date  %></p>
+	
+<ul>
+  <li><%= link_to "Edit", edit_auto_path(@auto) %></li>
+
+  <li><%= link_to "Delete auto", auto_path(@auto),
+                  method: :delete,
+                  data: { confirm: "Are you sure You want to delete This auto ?" } %></li>  
+
+  <li><%= link_to "Back", autos_path %></li>
+</ul>
+
+<h2>Comments</h2>
+<%= render @auto.comments %>
+
+<h2>Add a Comments:</h2>
+<%= render 'comments/form2' %>

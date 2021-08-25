@@ -1,14 +1,19 @@
 class CommentsController < ApplicationController
   def create
-    @car = Car.find(params[:car_id])
-    if (@car == "car_id")
+    
+    if params[:car_id].present?
+      @car = Car.find(params[:car_id])
       @car = Car.find(params[:car_id])
       @comment  = @car.comments.create(comment_params)
       redirect_to car_path(@car)
-    else
+    elsif params[:bike_id].present?
       @bike = Bike.find(params[:bike_id])
       comment  = @bike.comments.create(comment_params)
       redirect_to bike_path(@bike)
+    else
+      @auto = Auto.find(params[:auto_id])
+      comment  = @auto.comments.create(comment_params)
+      redirect_to auto_path(@auto)
     end
 
 
